@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bannerman Financial Freedom Scorecard Wireframe</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap');
+:root{--navy:#001F4D;--blue:#2563A6;--sage:#8DA58D;--white:#FFFFFF;--warm:#E8E6E3;--body:#5A6475;--slate:#7E8C99;--rule:#D9D7D3}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--navy);background:var(--white);line-height:1.5}
+h1,h2,h3,h4,.section-label,nav,.button,.logo-box,.score-num,.card-link{font-family:"Montserrat","Inter",system-ui,sans-serif}
+.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+.header{position:sticky;top:0;z-index:10;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 24px;max-width:1220px;margin:0 auto}
+.logo-box{height:48px;width:176px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;text-transform:uppercase;letter-spacing:.2em;font-size:12px;font-weight:700;color:rgba(255,255,255,.75)}
+nav{display:flex;gap:26px;font-size:14px;color:rgba(255,255,255,.78);font-weight:600}
+.button{display:inline-flex;align-items:center;justify-content:center;border-radius:6px;padding:12px 20px;font-size:14px;font-weight:700;text-decoration:none;border:1px solid rgba(0,31,77,.22);color:var(--navy);background:white;white-space:nowrap}
+.button.primary{background:var(--blue);color:white;border-color:var(--blue)}
+.button.reversed{background:white;color:var(--navy);border-color:white}
+.section-label{text-transform:uppercase;letter-spacing:.18em;color:var(--blue);font-weight:800;font-size:12px;margin:0 0 12px}
+h1,h2,h3{margin-top:0;letter-spacing:-.03em;line-height:1.04}
+h1{font-size:clamp(48px,7vw,84px);margin-bottom:28px}
+h2{font-size:clamp(36px,4.5vw,58px);margin-bottom:20px}
+h3{font-size:28px;margin-bottom:12px}
+p{color:var(--body)}
+.lede{font-size:20px;line-height:1.6;max-width:720px;margin-bottom:32px}
+.box{border:1px solid var(--rule);background:white;border-radius:18px;box-shadow:0 3px 10px rgba(0,31,77,.04)}
+.hero{position:relative;overflow:hidden;background:rgba(232,230,227,.45)}
+.hero .wrap{position:relative;z-index:2;padding-top:96px;padding-bottom:96px;display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:center}
+.hero-bg-graphic{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bg-circle{position:absolute;border-radius:999px;border:1px solid rgba(0,31,77,.10)}
+.bg-circle.one{height:680px;width:680px;right:-110px;top:-80px}
+.bg-circle.two{height:330px;width:330px;right:190px;top:150px;border-color:rgba(37,99,166,.13)}
+.bg-trunk{position:absolute;height:250px;width:1px;background:rgba(0,31,77,.14);right:355px;top:250px}
+.bg-branch{position:absolute;width:250px;border-top:1px solid rgba(0,31,77,.14);right:235px;top:275px}
+.bg-branch.left{transform:rotate(-25deg)}
+.bg-branch.right{transform:rotate(25deg)}
+.bg-node{position:absolute;border-radius:999px;border:1px solid rgba(37,99,166,.17)}
+.bg-node.a{height:140px;width:140px;right:395px;top:160px}
+.bg-node.b{height:120px;width:120px;right:170px;top:215px}
+.bg-node.c{height:100px;width:100px;right:465px;top:405px;border-color:rgba(141,165,141,.26)}
+.bg-node.d{height:86px;width:86px;right:220px;top:410px;border-color:rgba(141,165,141,.24)}
+.scorecard-start{padding:32px;background:white;border-radius:24px;box-shadow:0 10px 28px rgba(0,31,77,.10)}
+.input{border:1px solid var(--rule);border-radius:6px;padding:14px 16px;color:var(--slate);margin-bottom:14px}
+section{padding:86px 0}
+.dark{background:var(--navy);color:white}
+.dark p{color:#C0CFE5}
+.dark .section-label{color:white}
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.quad-card{padding:28px;min-height:210px}
+.quad-title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.quad-icon{height:40px;width:40px;border:1px solid var(--rule);border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:var(--blue);font-size:20px;font-weight:700;line-height:1;flex-shrink:0}
+.score-preview{padding:28px;background:white;border-radius:22px;box-shadow:0 8px 22px rgba(0,31,77,.10)}
+.score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.score-card{border:1px solid var(--rule);border-radius:14px;background:var(--blue);min-height:126px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;box-shadow:0 2px 8px rgba(0,31,77,.04)}
+.score-label{font-size:14px;font-weight:700;color:white;margin-bottom:12px}
+.score-num{font-size:40px;font-weight:700;color:var(--sage)}
+.overall{margin-top:20px;border:1px solid var(--rule);border-radius:14px;background:white;padding:24px 20px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--navy);box-shadow:0 2px 8px rgba(0,31,77,.04)}
+footer{background:white;border-top:1px solid var(--rule);color:var(--body);font-size:14px}.footer-grid{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:40px;padding:56px 24px}.footer-col h4{color:var(--navy);margin:0 0 16px;font-size:14px}.footer-col div{margin:0 0 8px}.footer-bottom{border-top:1px solid var(--rule);padding:20px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px}.legal{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:980px){nav{display:none}.hero .wrap,.split,.grid-3,.grid-4,.footer-grid{grid-template-columns:1fr}.score-grid{grid-template-columns:repeat(2,1fr)}.hero-bg-graphic{opacity:.45}}
+@media(max-width:560px){.nav-inner{flex-wrap:wrap}.score-grid{grid-template-columns:1fr}h1{font-size:44px}h2{font-size:34px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="nav-inner">
+    <div class="logo-box">Logo</div>
+    <nav><span>Scorecard</span><span>Who We Help</span><span>Podcast Listeners</span><span>Resources</span><span>About</span></nav>
+    <a class="button reversed" href="#">Schedule Clarity Call</a>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-bg-graphic"><div class="bg-circle one"></div><div class="bg-circle two"></div><div class="bg-trunk"></div><div class="bg-branch left"></div><div class="bg-branch right"></div><div class="bg-node a"></div><div class="bg-node b"></div><div class="bg-node c"></div><div class="bg-node d"></div></div>
+  <div class="wrap">
+    <div>
+      <div class="section-label">Financial Freedom Scorecard</div>
+      <h1>How optimized is your financial life?</h1>
+      <p class="lede">You’ve built real assets. This five-minute assessment helps reveal what’s working, what’s disconnected, and where quiet gaps may be costing you over time.</p>
+      <div class="grid-3" style="font-size:14px;color:var(--body);">
+        <div style="border-top:1px solid var(--rule);padding-top:12px;display:flex;gap:8px;"><span style="color:var(--sage);font-weight:800;">✓</span><span>Find hidden opportunities</span></div>
+        <div style="border-top:1px solid var(--rule);padding-top:12px;display:flex;gap:8px;"><span style="color:var(--sage);font-weight:800;">✓</span><span>See what’s working together</span></div>
+        <div style="border-top:1px solid var(--rule);padding-top:12px;display:flex;gap:8px;"><span style="color:var(--sage);font-weight:800;">✓</span><span>Get a personalized score report</span></div>
+      </div>
+    </div>
+    <div class="scorecard-start">
+      <div class="section-label" style="color:var(--slate);text-align:center;">Scorecard start</div>
+      <h2 style="font-size:32px;text-align:center;">Find out where you stand</h2>
+      <p style="text-align:center;">Start the scorecard and receive your personalized results by email.</p>
+      <div class="input">First name *</div>
+      <div class="input">Email *</div>
+      <a class="button primary" href="#" style="width:100%;">Start</a>
+      <p style="font-size:12px;text-align:center;margin-top:18px;">By submitting, you agree to receive emails from Bannerman Wealth. We respect your privacy and will never sell your information. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="split" style="margin-bottom:40px;align-items:start;">
+      <div><div class="section-label">What it measures</div><h2>The scorecard looks at four connected areas of financial freedom.</h2></div>
+      <p style="font-size:18px;">Behind the scenes, questions can still cover taxes, investing, protection, planning, and cash flow. On the page and in the report, we group the results into four clearer quadrants: Grow, Protect, Distribute, and Transfer.</p>
+    </div>
+    <div class="grid-4" style="color:var(--navy);">
+      <div class="box quad-card"><div class="quad-title"><h3>Grow</h3><span class="quad-icon">↗</span></div><p>Investing, cash flow, savings behavior, equity compensation, and the choices that help wealth continue working.</p></div>
+      <div class="box quad-card"><div class="quad-title"><h3>Protect</h3><span class="quad-icon">◎</span></div><p>Insurance, estate documents, risk, concentration, and the areas that keep wealth from being quietly exposed.</p></div>
+      <div class="box quad-card"><div class="quad-title"><h3>Distribute</h3><span class="quad-icon">↓</span></div><p>Taxes, retirement income, withdrawals, and the strategy behind turning assets into usable financial freedom.</p></div>
+      <div class="box quad-card"><div class="quad-title"><h3>Transfer</h3><span class="quad-icon">→</span></div><p>Legacy, beneficiaries, estate coordination, family decisions, and preparing wealth to move with less confusion.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="section-label">Your report</div>
+      <h2>You’ll receive a clearer view of what deserves attention next.</h2>
+      <p>The report should show the overall Financial Freedom Score, four quadrant scores, and a plain-English interpretation of where your financial picture may be working and where it may be leaking opportunity.</p>
+      <div style="color:var(--body);line-height:1.9;"><div>• A weighted overall Financial Freedom Score</div><div>• Quadrant-level scores for Grow, Protect, Distribute, and Transfer</div><div>• Result-range copy and a Score Review CTA with Josh and Anna</div></div>
+    </div>
+    <div class="box score-preview">
+      <div class="section-label" style="color:var(--slate);">Sample report preview</div>
+      <div class="score-grid">
+        <div class="score-card"><div class="score-label">Grow</div><div class="score-num">68%</div></div>
+        <div class="score-card"><div class="score-label">Protect</div><div class="score-num">90%</div></div>
+        <div class="score-card"><div class="score-label">Distribute</div><div class="score-num">60%</div></div>
+        <div class="score-card"><div class="score-label">Transfer</div><div class="score-num">78%</div></div>
+      </div>
+      <div class="overall"><div><div style="text-transform:uppercase;letter-spacing:.12em;color:var(--slate);font-size:12px;margin-bottom:6px;">Overall</div><strong>Financial Freedom Score</strong></div><div class="score-num" style="color:var(--navy);">75%</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap footer-grid"><div><div class="logo-box" style="margin-bottom:16px;border-color:rgba(0,31,77,.22);background:white;color:rgba(0,31,77,.55);">Logo</div><p>Financial planning for people whose wealth has outgrown DIY.</p></div><div class="footer-col"><h4>Scorecard</h4><div>Financial Freedom Scorecard</div><div>Grow</div><div>Protect</div><div>Distribute</div><div>Transfer</div></div><div class="footer-col"><h4>Who We Help</h4><div>Planning for Gen Xers Nearing Retirement</div><div>Wealth Planning for High-Earning Millennials</div><div>Podcast Listeners</div></div><div class="footer-col"><h4>Resources</h4><div>Education Series</div><div>Insights</div><div>Guidebooks</div></div><div class="footer-col"><h4>Bannerman Wealth</h4><div>About</div><div>Meet Josh</div><div>Meet Anna</div><div>Confident Wealth</div><div>Fee Schedule</div><div>Contact</div></div></div><div class="wrap footer-bottom"><div>© Bannerman Wealth</div><div class="legal"><span>Privacy Policy</span><span>Terms of Use</span><span>Form CRS</span><span>ADV</span><span>Disclosures</span></div></div></footer>
+</body>
+</html>
