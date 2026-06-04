@@ -356,10 +356,94 @@ footer{background:white;border-top:1px solid var(--rule);color:var(--body);font-
   padding:12px 0;
 }
 
+
+/* Shared nav fixes */
+nav a,
+nav a:visited{
+  color:rgba(255,255,255,.78)!important;
+  text-decoration:none!important;
+}
+.nav-dropdown{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+}
+.nav-dropbtn{
+  background:transparent;
+  border:0;
+  padding:0;
+  margin:0;
+  font:inherit;
+  color:rgba(255,255,255,.78);
+  cursor:pointer;
+}
+.nav-dropbtn:after{
+  content:"";
+  display:inline-block;
+  margin-left:7px;
+  border-left:4px solid transparent;
+  border-right:4px solid transparent;
+  border-top:5px solid rgba(255,255,255,.72);
+  transform:translateY(-1px);
+}
+.nav-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:240px;
+  padding:10px;
+  background:white;
+  border:1px solid rgba(217,215,211,.95);
+  border-radius:12px;
+  box-shadow:0 12px 28px rgba(0,31,77,.14);
+  z-index:50;
+}
+.nav-dropdown:hover .nav-menu,
+.nav-dropdown:focus-within .nav-menu{
+  display:grid;
+  gap:4px;
+}
+.nav-menu a,
+.nav-menu a:visited{
+  display:block;
+  color:#001F4D!important;
+  padding:10px 12px;
+  border-radius:8px;
+  text-decoration:none!important;
+  white-space:nowrap;
+}
+.nav-menu a:hover{
+  background:rgba(232,230,227,.55);
+}
+.button:visited,
+.card-link:visited,
+.team-link:visited,
+.footer-col a:visited,
+a:visited{
+  color:inherit;
+}
+.button.primary:visited,
+.button.sage:visited{
+  color:white!important;
+}
+
 </style>
 </head>
 <body>
-<header class="header"><div class="nav-inner"><a class="logo-link" href="index.html"><div class="logo-box">Logo</div></a><nav><a href="framework.html">Framework</a><a href="gen-x.html">Who We Help</a><a href="resource-library.html">Podcast Listeners</a><a href="resource-library.html">Resources</a><a href="about.html">About</a></nav><a class="button reversed" href="scorecard.html">Schedule Clarity Call</a></div></header>
+<header class="header"><div class="nav-inner"><a class="logo-link" href="index.html"><div class="logo-box">Logo</div></a><nav>
+      <a href="framework.html">Framework</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn" type="button">Who We Help</button>
+        <div class="nav-menu">
+          <a href="gen-x.html">Gen Xers</a>
+          <a href="high-earning-millennials.html">High-Earning Millennials</a>
+        </div>
+      </div>
+      <a href="podcast-listeners.html">Podcast Listeners</a>
+      <a href="resource-library.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav><a class="button reversed" href="scorecard.html">Get My Financial Health Score</a></div></header>
 <main>
 <section class="hero">
   <div class="wrap">
@@ -519,7 +603,7 @@ footer{background:white;border-top:1px solid var(--rule);color:var(--body);font-
   <div class="wrap footer-grid">
     <div><div class="footer-logo">Logo</div><p>Financial planning for people whose wealth has outgrown DIY.</p></div>
     <div class="footer-col"><h4>Framework</h4><div><a href="resource-library.html#topics">Grow</a></div><div><a href="resource-library.html#topics">Protect</a></div><div><a href="resource-library.html#topics">Distribute</a></div><div><a href="resource-library.html#topics">Transfer</a></div></div>
-    <div class="footer-col"><h4>Who We Help</h4><div><a href="gen-x.html">Planning for Gen Xers Nearing Retirement</a></div><div><a href="high-earning-millennials.html">Wealth Planning for High-Earning Millennials</a></div><div><a href="resource-library.html">Podcast Listeners</a></div></div>
+    <div class="footer-col"><h4>Who We Help</h4><div><a href="gen-x.html">Planning for Gen Xers Nearing Retirement</a></div><div><a href="high-earning-millennials.html">Wealth Planning for High-Earning Millennials</a></div><div><a href="podcast-listeners.html">Podcast Listeners</a></div></div>
     <div class="footer-col"><h4>Resources</h4><div><a href="resource-library.html">Education Series</a></div><div><a href="resource-library.html#latest">Insights</a></div><div><a href="resource-library.html#featured">Guidebooks</a></div></div>
     <div class="footer-col"><h4>Bannerman Wealth</h4><div><a href="about.html">About</a></div><div><a href="josh-bio.html">Meet Josh</a></div><div><a href="about.html">Meet Anna</a></div><div><a href="fee-schedule.html">Fee Schedule</a></div><div><a href="about.html">Contact</a></div></div>
   </div>

@@ -198,6 +198,78 @@ nav a{color:rgba(255,255,255,.78)!important;text-decoration:none!important}
   text-align:left!important;
 }
 
+
+/* Shared nav fixes */
+nav a,
+nav a:visited{
+  color:rgba(255,255,255,.78)!important;
+  text-decoration:none!important;
+}
+.nav-dropdown{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+}
+.nav-dropbtn{
+  background:transparent;
+  border:0;
+  padding:0;
+  margin:0;
+  font:inherit;
+  color:rgba(255,255,255,.78);
+  cursor:pointer;
+}
+.nav-dropbtn:after{
+  content:"";
+  display:inline-block;
+  margin-left:7px;
+  border-left:4px solid transparent;
+  border-right:4px solid transparent;
+  border-top:5px solid rgba(255,255,255,.72);
+  transform:translateY(-1px);
+}
+.nav-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:240px;
+  padding:10px;
+  background:white;
+  border:1px solid rgba(217,215,211,.95);
+  border-radius:12px;
+  box-shadow:0 12px 28px rgba(0,31,77,.14);
+  z-index:50;
+}
+.nav-dropdown:hover .nav-menu,
+.nav-dropdown:focus-within .nav-menu{
+  display:grid;
+  gap:4px;
+}
+.nav-menu a,
+.nav-menu a:visited{
+  display:block;
+  color:#001F4D!important;
+  padding:10px 12px;
+  border-radius:8px;
+  text-decoration:none!important;
+  white-space:nowrap;
+}
+.nav-menu a:hover{
+  background:rgba(232,230,227,.55);
+}
+.button:visited,
+.card-link:visited,
+.team-link:visited,
+.footer-col a:visited,
+a:visited{
+  color:inherit;
+}
+.button.primary:visited,
+.button.sage:visited{
+  color:white!important;
+}
+
 </style>
 </head>
 <body>
@@ -207,8 +279,14 @@ nav a{color:rgba(255,255,255,.78)!important;text-decoration:none!important}
     <a class="logo-link" href="index.html"><div class="logo-box">Logo</div></a>
     <nav>
       <a href="framework.html">Framework</a>
-      <a href="gen-x.html">Who We Help</a>
-      <a href="resource-library.html">Podcast Listeners</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn" type="button">Who We Help</button>
+        <div class="nav-menu">
+          <a href="gen-x.html">Gen Xers</a>
+          <a href="high-earning-millennials.html">High-Earning Millennials</a>
+        </div>
+      </div>
+      <a href="podcast-listeners.html">Podcast Listeners</a>
       <a href="resource-library.html">Resources</a>
       <a href="about.html">About</a>
     </nav>
@@ -243,12 +321,7 @@ nav a{color:rgba(255,255,255,.78)!important;text-decoration:none!important}
     <div class="grid-2">
       <div class="box card"><div><div class="icon">Icon</div><h3>Planning for Gen Xers<br>Nearing Retirement</h3><p>You’ve built meaningful wealth, and now retirement, taxes, investments, family, and legacy decisions are starting to converge.</p></div><a class="card-link" href="gen-x.html">Explore Planning for Gen Xers →</a></div>
       <div class="box card"><div><div class="icon">Icon</div><h3>Wealth Planning for<br>High-Earning Millennials</h3><p>Your income, savings, equity, career, and family decisions are growing more complex faster than expected.</p></div><a class="card-link" href="high-earning-millennials.html">Explore Wealth Planning for High Earners →</a></div>
-    </div>
-    <div class="box podcast-band">
-      <div class="podcast-left"><div class="podcast-icon" aria-label="Audio"></div><div><div class="podcast-label">For Podcast Listeners</div><div class="podcast-title">Already familiar with Josh “OG” and Anna from the podcast?</div></div></div>
-      <a class="button sage" href="resource-library.html">Explore Resources</a>
-    </div>
-  </div>
+    </div></div>
 </section>
 
 <section class="white-block">
@@ -256,8 +329,8 @@ nav a{color:rgba(255,255,255,.78)!important;text-decoration:none!important}
     <div class="box education-box"><div class="josh-anna-photo">Josh and Anna photo placeholder</div></div>
     <div>
       <div class="section-label">Education to planning</div>
-      <h2>If you already know Josh and Anna, this is where education becomes coordinated advice.</h2>
-      <p>For years, Josh and Anna have helped people ask better questions about money. Bannerman Wealth continues that educational path through resources on cash flow, investing, taxes, retirement income, insurance, estate planning, equity compensation, and more.</p>
+      <h2>Already familiar with Josh “OG” and Anna from the podcast?</h2>
+      <p>This is where education becomes coordinated advice. For years, Josh and Anna have helped people ask better questions about money. Bannerman Wealth continues that educational path through resources on cash flow, investing, taxes, retirement income, insurance, estate planning, equity compensation, and more.</p>
       <p>Bannerman Wealth is the advisory firm for people who are ready to move from smart questions to a coordinated plan.</p>
       <a class="button sage" href="resource-library.html">Explore Resources</a>
       

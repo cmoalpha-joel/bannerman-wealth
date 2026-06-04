@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bannerman Wealth | For Podcast Listeners</title>
+<meta name="description" content="You've heard the ideas. Now build the plan. Bannerman Wealth helps podcast listeners turn financial education into coordinated advice." />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap');
+:root{--navy:#001F4D;--blue:#2563A6;--sage:#8DA58D;--white:#FFFFFF;--warm:#E8E6E3;--body:#5A6475;--slate:#7E8C99;--footer:#B0B8C1;--rule:#D9D7D3}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--navy);background:var(--white);line-height:1.5}
+h1,h2,h3,h4,.section-label,nav,.button,.logo-box,.stat-num,.card-link,.press-item{font-family:"Montserrat","Inter",system-ui,sans-serif}
+.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+.header{position:sticky;top:0;z-index:10;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 24px;max-width:1220px;margin:0 auto}
+.logo-box{height:48px;width:176px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;text-transform:uppercase;letter-spacing:.2em;font-size:12px;font-weight:700;color:rgba(255,255,255,.75)}
+nav{display:flex;gap:26px;font-size:14px;color:rgba(255,255,255,.78);font-weight:600}
+.button{display:inline-flex;align-items:center;justify-content:center;border-radius:6px;padding:12px 20px;font-size:14px;font-weight:700;text-decoration:none;border:1px solid rgba(0,31,77,.22);color:var(--navy);background:white;white-space:nowrap}
+.button.primary{background:var(--blue);color:white;border-color:var(--blue)}
+.button.sage{background:var(--sage);color:white;border-color:var(--sage)}
+.button.reversed{background:white;color:var(--navy);border-color:white}
+.section-label{text-transform:uppercase;letter-spacing:.18em;color:var(--blue);font-weight:800;font-size:12px;margin:0 0 12px}
+h1,h2,h3{margin-top:0;letter-spacing:-.03em;line-height:1.04}
+h1{font-size:clamp(48px,7vw,84px);margin-bottom:28px}
+h2{font-size:clamp(36px,4.5vw,58px);margin-bottom:20px}
+h3{font-size:28px;margin-bottom:12px}
+p{color:var(--body)}
+.lede{font-size:20px;line-height:1.6;max-width:720px;margin-bottom:32px}
+.buttons{display:flex;flex-wrap:wrap;gap:16px}
+.box{border:1px solid var(--rule);background:white;border-radius:18px;box-shadow:0 3px 10px rgba(0,31,77,.04)}
+.hero{position:relative;overflow:hidden;background:rgba(232,230,227,.45)}
+.hero .wrap{position:relative;z-index:2;padding-top:104px;padding-bottom:104px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero-bg-graphic{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bg-circle{position:absolute;border-radius:999px;border:1px solid rgba(0,31,77,.10)}
+.bg-circle.one{height:680px;width:680px;right:-110px;top:-80px}
+.bg-circle.two{height:330px;width:330px;right:190px;top:150px;border-color:rgba(37,99,166,.13)}
+.bg-trunk{position:absolute;height:250px;width:1px;background:rgba(0,31,77,.14);right:355px;top:250px}
+.bg-branch{position:absolute;width:250px;border-top:1px solid rgba(0,31,77,.14);right:235px;top:275px}
+.bg-branch.left{transform:rotate(-25deg)}
+.bg-branch.right{transform:rotate(25deg)}
+.bg-node{position:absolute;border-radius:999px;border:1px solid rgba(37,99,166,.17)}
+.bg-node.a{height:140px;width:140px;right:395px;top:160px}
+.bg-node.b{height:120px;width:120px;right:170px;top:215px}
+.bg-node.c{height:100px;width:100px;right:465px;top:405px;border-color:rgba(141,165,141,.26)}
+.bg-node.d{height:86px;width:86px;right:220px;top:410px;border-color:rgba(141,165,141,.24)}
+.recognition-card{padding:34px;background:white;border-left:5px solid var(--sage)}
+.recognition-card h3{font-size:30px}
+.name-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.person-card{border:1px solid var(--rule);border-radius:14px;padding:20px;background:rgba(232,230,227,.28)}
+.person-name{font-family:"Montserrat","Inter",system-ui,sans-serif;color:var(--navy);font-weight:800;margin-bottom:4px}
+.person-role{font-size:13px;color:var(--body)}
+.stats-section{background:var(--navy);color:white;padding:52px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.stat{text-align:left}
+.stat-num{display:block;color:white;font-size:40px;line-height:1;font-weight:800;margin-bottom:10px}
+.stat-label{color:var(--footer);font-size:13px;text-transform:uppercase;letter-spacing:.12em}
+.press-section{background:white;border-bottom:1px solid var(--rule);padding:42px 0}
+.press-layout{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.press-label{font-family:"Montserrat","Inter",system-ui,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--slate);font-weight:800}
+.press-items{display:flex;flex-wrap:wrap;gap:14px}
+.press-item{border:1px solid var(--rule);border-radius:999px;padding:10px 16px;color:var(--navy);background:rgba(232,230,227,.28);font-weight:700;font-size:14px}
+section{padding:86px 0}
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.warm-block{background:rgba(232,230,227,.35);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.dark{background:var(--navy);color:white}
+.dark p{color:#C0CFE5}
+.dark .section-label{color:white}
+.panel{padding:34px;background:white;border-top:4px solid var(--blue)}
+.check-list{list-style:none;padding:0;margin:0}
+.check-list li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--rule);color:var(--body)}
+.check-list li:last-child{border-bottom:none}
+.check{color:var(--sage);font-weight:900;flex-shrink:0}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.cta-card{border-radius:18px;padding:34px;min-height:260px}
+.cta-card h3{color:white}
+.cta-card p{color:rgba(255,255,255,.72)}
+.cta-card.subtle{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.cta-card.primary{background:var(--blue)}
+footer{background:white;border-top:1px solid var(--rule);color:var(--body);font-size:14px}
+.footer-grid{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:40px;padding:56px 24px}
+.footer-logo{height:48px;width:176px;border:2px solid rgba(0,31,77,.22);background:white;border-radius:6px;display:flex;align-items:center;justify-content:center;text-transform:uppercase;letter-spacing:.2em;font-size:12px;font-weight:700;color:rgba(0,31,77,.55);margin-bottom:16px}
+.footer-col h4{color:var(--navy);margin:0 0 16px;font-size:14px}
+.footer-col div{margin:0 0 8px}
+.footer-bottom{border-top:1px solid var(--rule);padding:20px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px}
+.legal{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:980px){nav{display:none}.hero .wrap,.split,.stats-grid,.footer-grid,.cta-grid{grid-template-columns:1fr}.hero-bg-graphic{opacity:.45}.name-row{grid-template-columns:1fr}}
+@media(max-width:560px){.nav-inner{flex-wrap:wrap}h1{font-size:44px}h2{font-size:34px}}
+
+.resource-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:36px}
+.resource-card{padding:28px;min-height:285px;display:flex;flex-direction:column;justify-content:space-between}
+.resource-tag{display:inline-flex;width:max-content;border:1px solid var(--rule);border-radius:999px;padding:6px 11px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:800;font-family:"Montserrat","Inter",system-ui,sans-serif;margin-bottom:18px}
+.resource-card h3{font-size:24px;line-height:1.12;margin-bottom:14px}
+.resource-card p{font-size:14px;line-height:1.65}
+.resource-link{font-family:"Montserrat","Inter",system-ui,sans-serif;font-size:14px;font-weight:800;color:var(--navy);margin-top:24px}
+@media(max-width:980px){.resource-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.resource-grid{grid-template-columns:1fr}}
+
+
+.image-placeholder{
+  height:148px;
+  border-radius:16px;
+  border:1px solid rgba(0,31,77,.12);
+  background:linear-gradient(135deg, rgba(232,230,227,.65), rgba(255,255,255,.85));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--slate);
+  font-size:13px;
+  margin-bottom:16px;
+}
+.person-card.has-photo{
+  padding:16px;
+}
+.content-quadrant-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:20px;
+  margin-top:36px;
+}
+.content-quadrant{
+  padding:28px;
+  min-height:390px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.content-quadrant h3{
+  font-size:26px;
+  margin-bottom:10px;
+}
+.topic-list{
+  list-style:none;
+  margin:22px 0 0;
+  padding:0;
+}
+.topic-list li{
+  border-top:1px solid var(--rule);
+  padding:12px 0;
+  color:var(--body);
+  font-size:14px;
+  line-height:1.45;
+}
+.topic-list li:first-child{
+  border-top:none;
+  padding-top:0;
+}
+.quadrant-link{
+  font-family:"Montserrat","Inter",system-ui,sans-serif;
+  font-weight:800;
+  color:var(--navy);
+  font-size:14px;
+  margin-top:22px;
+}
+@media(max-width:980px){.content-quadrant-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.content-quadrant-grid{grid-template-columns:1fr}}
+
+
+.topic-list li a{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  color:var(--body);
+  text-decoration:none;
+}
+.topic-list li a:hover{
+  color:var(--navy);
+}
+.doc-icon{
+  width:22px;
+  height:26px;
+  border:1px solid var(--rule);
+  border-radius:4px;
+  position:relative;
+  flex-shrink:0;
+  background:white;
+  margin-top:1px;
+}
+.doc-icon::before{
+  content:"";
+  position:absolute;
+  top:5px;
+  left:5px;
+  right:5px;
+  height:1px;
+  background:var(--sage);
+  box-shadow:0 5px 0 var(--sage),0 10px 0 var(--sage);
+  opacity:.9;
+}
+.quadrant-eyebrow{
+  font-family:"Montserrat","Inter",system-ui,sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--blue);
+  font-weight:800;
+  margin-bottom:14px;
+}
+
+
+/* Shared nav fixes */
+nav a,
+nav a:visited{
+  color:rgba(255,255,255,.78)!important;
+  text-decoration:none!important;
+}
+.nav-dropdown{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+}
+.nav-dropbtn{
+  background:transparent;
+  border:0;
+  padding:0;
+  margin:0;
+  font:inherit;
+  color:rgba(255,255,255,.78);
+  cursor:pointer;
+}
+.nav-dropbtn:after{
+  content:"";
+  display:inline-block;
+  margin-left:7px;
+  border-left:4px solid transparent;
+  border-right:4px solid transparent;
+  border-top:5px solid rgba(255,255,255,.72);
+  transform:translateY(-1px);
+}
+.nav-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:240px;
+  padding:10px;
+  background:white;
+  border:1px solid rgba(217,215,211,.95);
+  border-radius:12px;
+  box-shadow:0 12px 28px rgba(0,31,77,.14);
+  z-index:50;
+}
+.nav-dropdown:hover .nav-menu,
+.nav-dropdown:focus-within .nav-menu{
+  display:grid;
+  gap:4px;
+}
+.nav-menu a,
+.nav-menu a:visited{
+  display:block;
+  color:#001F4D!important;
+  padding:10px 12px;
+  border-radius:8px;
+  text-decoration:none!important;
+  white-space:nowrap;
+}
+.nav-menu a:hover{
+  background:rgba(232,230,227,.55);
+}
+a:visited{
+  color:inherit;
+}
+.button.primary:visited,
+.button.sage:visited{
+  color:white!important;
+}
+
+.logo-link{color:inherit;text-decoration:none}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="nav-inner">
+    <a class="logo-link" href="index.html"><div class="logo-box">Logo</div></a>
+    <nav>
+      <a href="framework.html">Framework</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn" type="button">Who We Help</button>
+        <div class="nav-menu">
+          <a href="gen-x.html">Gen Xers</a>
+          <a href="high-earning-millennials.html">High-Earning Millennials</a>
+        </div>
+      </div>
+      <a href="podcast-listeners.html">Podcast Listeners</a>
+      <a href="resource-library.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a class="button reversed" href="scorecard.html">Get My Financial Health Score</a>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-bg-graphic">
+    <div class="bg-circle one"></div><div class="bg-circle two"></div>
+    <div class="bg-trunk"></div><div class="bg-branch left"></div><div class="bg-branch right"></div>
+    <div class="bg-node a"></div><div class="bg-node b"></div><div class="bg-node c"></div><div class="bg-node d"></div>
+  </div>
+  <div class="wrap">
+    <div>
+      <div class="section-label">For listeners of the podcast</div>
+      <h1>You’ve heard the ideas. Now build the plan.</h1>
+      <p class="lede">If you found us through the podcast, you already know how Josh and Anna think about money. Bannerman Wealth is where those ideas become coordinated advice for your actual financial life.</p>
+      <div class="buttons">
+        <a class="button primary" href="#">Get My Financial Health Score</a>
+        <a class="button" href="#">Schedule Clarity Call</a>
+      </div>
+    </div>
+    <div class="box recognition-card">
+      <h3>From financial education to coordinated advice.</h3>
+      <p>The podcast can help you think differently about money. Bannerman Wealth helps you turn that thinking into a plan across investments, taxes, retirement income, risk, estate coordination, and family decisions.</p>
+      <div class="name-row">
+        <div class="person-card has-photo">
+          <div class="image-placeholder">Josh image</div>
+          <div class="person-name">Josh Bannerman, CFP®</div>
+          <div class="person-role">Principal, advisor, familiar voice from the podcast</div>
+        </div>
+        <div class="person-card has-photo">
+          <div class="image-placeholder">Anna image</div>
+          <div class="person-name">Anna Allem, CFP®</div>
+          <div class="person-role">Advisor, planning partner, familiar voice from the podcast</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="stats-section">
+  <div class="wrap stats-grid">
+    <div class="stat"><span class="stat-num">40M+</span><span class="stat-label">Downloads</span></div>
+    <div class="stat"><span class="stat-num">15 yrs</span><span class="stat-label">On the air</span></div>
+    <div class="stat"><span class="stat-num">1,470+</span><span class="stat-label">Episodes</span></div>
+    <div class="stat"><span class="stat-num">Top 0.5%</span><span class="stat-label">Personal finance shows globally</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="section-label">The bridge</div>
+      <h2>The show starts the conversation. This is where it becomes personal.</h2>
+      <p>Bannerman Wealth is the advisory firm for people who are ready to move from smart financial conversations to coordinated planning decisions.</p>
+      <p>Many listeners already know the concepts. They’re not looking for a basic explanation of investing or retirement. They’re looking for help making the pieces work together in their own financial life.</p>
+      <p>That’s the difference between general education and personal advice.</p>
+      <div class="buttons" style="margin-top:28px;">
+        <a class="button primary" href="#">Learn About the Bannerman Wealth Framework</a>
+      </div>
+    </div>
+    <div class="box panel">
+      <div class="section-label">What planning can coordinate</div>
+      <ul class="check-list">
+        <li><span class="check">✓</span><span>Investment strategy and portfolio design</span></li>
+        <li><span class="check">✓</span><span>Tax planning and CPA coordination</span></li>
+        <li><span class="check">✓</span><span>Equity compensation decisions</span></li>
+        <li><span class="check">✓</span><span>Retirement income and withdrawal sequencing</span></li>
+        <li><span class="check">✓</span><span>Insurance, risk, and estate coordination</span></li>
+        <li><span class="check">✓</span><span>Cash flow, savings, and family decision-making</span></li>
+      </ul>
+      <div style="margin-top:28px;padding-top:22px;border-top:1px solid var(--rule);">
+        <div class="section-label">A good fit if</div>
+        <p style="margin-bottom:0;">You’ve built real assets, respect the education, and want help making the moving parts work together in your actual financial life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="warm-block">
+  <div class="wrap">
+    <div style="max-width:800px;">
+      <div class="section-label">Planning insights</div>
+      <h2>Podcast ideas, organized into a planning library.</h2>
+      <p>Explore practical articles, explainers, and planning guides built from the same kinds of financial conversations listeners have followed for years, now organized around the decisions that matter most in your own financial life.</p>
+    </div>
+
+    <div class="content-quadrant-grid">
+      <div class="box content-quadrant">
+        <div><h3>Grow</h3>
+          <p>Articles about building, investing, and optimizing wealth as the stakes get higher.</p>
+          <ul class="topic-list">
+            <li><a href="#"><span class="doc-icon"></span><span>What DIY investors often miss after the first $1M</span></a></li>
+            <li><a href="#"><span class="doc-icon"></span><span>How concentrated stock quietly changes your risk</span></a></li>
+            <li><a href="#"><span class="doc-icon"></span><span>When strong income still needs a better savings system</span></a></li>
+          </ul>
+        </div>
+        <div class="quadrant-link">Explore more insights on Growth →</div>
+      </div>
+
+      <div class="box content-quadrant">
+        <div><h3>Protect</h3>
+          <p>Articles about risk, insurance, estate documents, and keeping wealth from being quietly exposed.</p>
+          <ul class="topic-list">
+            <li><a href="#"><span class="doc-icon"></span><span>Why protection gaps grow as your net worth grows</span></a></li>
+            <li><a href="#"><span class="doc-icon"></span><span>How to think about umbrella coverage</span></a></li>
+            <li><a href="#"><span class="doc-icon"></span><span>When old estate documents stop matching your life</span></a></li>
+          </ul>
+        </div>
+        <div class="quadrant-link">Explore more insights on Protection →</div>
+      </div>
+
+      <div class="box content-quadrant">
+        <div><h3>Distribute</h3>
+          <p>Articles about turning assets into income, managing taxes, and making smarter timing decisions.</p>
+          <ul class="topic-list">
+            <li><a href="#"><span class="doc-icon"></span><span>Turning retirement savings into retirement income</span></a></li>
+            <li><a href="#"><span class="doc-icon"></span><span>Why tax planning should shape withdrawal decisions</span></a></li>
+            <li><a href="#"><span class="doc-icon"></span><span>How retirement timing affects more than your portfolio</span></a></li>
+          </ul>
+        </div>
+        <div class="quadrant-link">Explore more insights on Distribution →</div>
+      </div>
+
+      <div class="box content-quadrant">
+        <div><h3>Transfer</h3>
+          <p>Articles about legacy, beneficiaries, family conversations, and making wealth easier to pass on.</p>
+          <ul class="topic-list">
+            <li><a href="#"><span class="doc-icon"></span><span>How to make beneficiary decisions less confusing</span></a></li>
+            <li><a href="#"><span class="doc-icon"></span><span>When family money conversations need structure</span></a></li>
+            <li><a href="#"><span class="doc-icon"></span><span>What legacy planning looks like before it feels urgent</span></a></li>
+          </ul>
+        </div>
+        <div class="quadrant-link">Explore more insights on Transfer →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="press-section">
+  <div class="wrap press-layout">
+    <div class="press-label">Josh has been featured in</div>
+    <div class="press-items">
+      <div class="press-item">Bankrate</div><div class="press-item">Kiplinger</div><div class="press-item">Investopedia</div><div class="press-item">Newsweek</div><div class="press-item">Plutus Award winner ×2</div>
+    </div>
+  </div>
+</section>
+<section class="dark">
+  <div class="wrap">
+    <div class="section-label">Two ways to start</div>
+    <h2 style="color:white;max-width:680px;">Ready when you are. Start with the scorecard or start with a conversation.</h2>
+    <div class="cta-grid">
+      <div class="cta-card subtle">
+        <div class="section-label" style="color:var(--footer);">Not sure where to begin</div>
+        <h3>Take the Financial Freedom Scorecard.</h3>
+        <p>See where your financial picture is working, where it may be disconnected, and what deserves a closer look.</p>
+        <a class="button sage" href="#">Get My Financial Health Score</a>
+      </div>
+      <div class="cta-card primary">
+        <div class="section-label" style="color:rgba(255,255,255,.65);">Ready to talk</div>
+        <h3>Schedule a Clarity Call.</h3>
+        <p>Talk through your situation, what decisions are in front of you, and whether working together makes sense.</p>
+        <a class="button reversed" href="#">Schedule Clarity Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap footer-grid">
+    <div><div class="footer-logo">Logo</div><p>Financial planning for people whose wealth has outgrown DIY.</p></div>
+    <div class="footer-col"><h4>Scorecard</h4><div>Financial Freedom Scorecard</div><div>Grow</div><div>Protect</div><div>Distribute</div><div>Transfer</div></div>
+    <div class="footer-col"><h4>Who We Help</h4><div>Planning for Gen Xers Nearing Retirement</div><div>Wealth Planning for High-Earning Millennials</div><div>Podcast Listeners</div></div>
+    <div class="footer-col"><h4>Resources</h4><div>Education Series</div><div>Insights</div><div>Guidebooks</div></div>
+    <div class="footer-col"><h4>Bannerman Wealth</h4><div>About</div><div>Meet Josh</div><div>Meet Anna</div><div>Bannerman Wealth</div><div>Fee Schedule</div><div>Contact</div></div>
+  </div>
+  <div class="wrap footer-bottom">
+    <div>© Bannerman Wealth</div>
+    <div class="legal"><span>Privacy Policy</span><span>Terms of Use</span><span>Form CRS</span><span>ADV</span><span>Disclosures</span></div>
+  </div>
+</footer>
+</body>
+</html>

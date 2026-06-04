@@ -67,6 +67,93 @@ section{padding:86px 0}
 .step-card{padding:28px;min-height:230px}
 @media(max-width:980px){nav{display:none}.split,.grid-3,.grid-4{grid-template-columns:1fr}.score-grid{grid-template-columns:repeat(2,1fr)}.hero-bg-graphic{opacity:.45}}
 @media(max-width:560px){.nav-inner{flex-wrap:wrap}.score-grid{grid-template-columns:1fr}h1{font-size:44px}h2{font-size:34px}}
+
+/* Shared nav fixes */
+nav a,
+nav a:visited{
+  color:rgba(255,255,255,.78)!important;
+  text-decoration:none!important;
+}
+.nav-dropdown{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+}
+.nav-dropbtn{
+  background:transparent;
+  border:0;
+  padding:0;
+  margin:0;
+  font:inherit;
+  color:rgba(255,255,255,.78);
+  cursor:pointer;
+}
+.nav-dropbtn:after{
+  content:"";
+  display:inline-block;
+  margin-left:7px;
+  border-left:4px solid transparent;
+  border-right:4px solid transparent;
+  border-top:5px solid rgba(255,255,255,.72);
+  transform:translateY(-1px);
+}
+.nav-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:240px;
+  padding:10px;
+  background:white;
+  border:1px solid rgba(217,215,211,.95);
+  border-radius:12px;
+  box-shadow:0 12px 28px rgba(0,31,77,.14);
+  z-index:50;
+}
+.nav-dropdown:hover .nav-menu,
+.nav-dropdown:focus-within .nav-menu{
+  display:grid;
+  gap:4px;
+}
+.nav-menu a,
+.nav-menu a:visited{
+  display:block;
+  color:#001F4D!important;
+  padding:10px 12px;
+  border-radius:8px;
+  text-decoration:none!important;
+  white-space:nowrap;
+}
+.nav-menu a:hover{
+  background:rgba(232,230,227,.55);
+}
+.button:visited,
+.card-link:visited,
+.team-link:visited,
+.footer-col a:visited,
+a:visited{
+  color:inherit;
+}
+.button.primary:visited,
+.button.sage:visited{
+  color:white!important;
+}
+
+
+/* Scorecard step title alignment fix */
+.step-card h3,
+.process-card h3,
+.step h3{
+  display:block!important;
+  clear:both!important;
+}
+.step-card .step-label,
+.process-card .step-label,
+.step .step-label{
+  display:block!important;
+  margin-bottom:14px!important;
+}
+
 </style>
 </head>
 <body>
@@ -74,13 +161,19 @@ section{padding:86px 0}
   <div class="nav-inner">
     <a class="logo-link" href="index.html"><div class="logo-box">Logo</div></a>
     <nav>
-      <span>Financial Life</span>
-      <a href="gen-x.html">Who We Help</a>
-      <a href="resource-library.html">Podcast Listeners</a>
+      <a href="framework.html">Framework</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn" type="button">Who We Help</button>
+        <div class="nav-menu">
+          <a href="gen-x.html">Gen Xers</a>
+          <a href="high-earning-millennials.html">High-Earning Millennials</a>
+        </div>
+      </div>
+      <a href="podcast-listeners.html">Podcast Listeners</a>
       <a href="resource-library.html">Resources</a>
       <a href="about.html">About</a>
     </nav>
-    <a class="button reversed" href="scorecard.html">Schedule Clarity Call</a>
+    <a class="button reversed" href="scorecard.html">Get My Financial Health Score</a>
   </div>
 </header>
 
@@ -171,8 +264,10 @@ section{padding:86px 0}
     </div>
     <div class="grid-3">
       <div class="box step-card"><div class="section-label" style="color:var(--slate);">Step 01</div><h3>Complete the scorecard</h3><p>Answer a focused set of questions about how coordinated your financial life feels today.</p></div>
-      <div class="box step-card"><div class="section-label" style="color:var(--slate);">Step 02</div><h3>Receive your report</h3><p>Get your results by email, including your four-part score and areas that may deserve attention.</p></div>
-      <div class="box step-card"><div class="section-label" style="color:var(--slate);">Step 03</div><h3>Review your results</h3><p>When ready, schedule a Score Review to discuss what your results may mean for your household.</p></div>
+      <div class="box step-card"><div class="section-label" style="color:var(--slate);">Step 02</div>
+<h3>Receive your report</h3><p>Get your results by email, including your four-part score and areas that may deserve attention.</p></div>
+      <div class="box step-card"><div class="section-label" style="color:var(--slate);">Step 03</div>
+<h3>Review your results</h3><p>When ready, schedule a Score Review to discuss what your results may mean for your household.</p></div>
     </div>
   </div>
 </section>
