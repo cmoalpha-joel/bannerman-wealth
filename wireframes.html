@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bannerman Wealth Wireframes</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap');
+:root{--navy:#001F4D;--blue:#2563A6;--sage:#8DA58D;--warm:#E8E6E3;--body:#5A6475;--rule:#D9D7D3;}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--navy);background:#fff;line-height:1.5}
+.hero{background:rgba(232,230,227,.45);padding:72px 24px;border-bottom:1px solid var(--rule)} .wrap{max-width:1120px;margin:0 auto}
+h1,h2{font-family:Montserrat,Inter,sans-serif;letter-spacing:-.03em;line-height:1.05;margin-top:0} h1{font-size:clamp(42px,5vw,64px);margin-bottom:18px}
+p{color:var(--body);font-size:18px;line-height:1.65;max-width:760px} .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:56px 24px}
+.card{border:1px solid var(--rule);border-radius:18px;padding:28px;text-decoration:none;color:var(--navy);box-shadow:0 3px 10px rgba(0,31,77,.04);background:white;min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+.card:hover{border-color:var(--sage)} .eyebrow{font-family:Montserrat,Inter,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--blue);font-size:12px;font-weight:800;margin-bottom:12px}
+.card h2{font-size:26px;margin-bottom:12px} .card span{font-family:Montserrat,Inter,sans-serif;font-weight:800;color:var(--blue);font-size:14px}
+.note{padding:0 24px 60px} .note-inner{max-width:1120px;margin:0 auto;border-top:1px solid var(--rule);padding-top:24px;color:var(--body);font-size:14px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section class="hero"><div class="wrap"><div class="eyebrow">Bannerman Wealth</div><h1>Bannerman Wealth Wireframes</h1><p>A working microsite for reviewing page structure, messaging hierarchy, and conversion paths before visual design.</p></div></section>
+<main class="wrap grid">
+<a class="card" href="index.html"><div><div class="eyebrow">Wireframe</div><h2>Homepage</h2></div><span>Open page →</span></a>
+<a class="card" href="scorecard.html"><div><div class="eyebrow">Wireframe</div><h2>Financial Health Scorecard</h2></div><span>Open page →</span></a>
+<a class="card" href="framework.html"><div><div class="eyebrow">Wireframe</div><h2>Bannerman Wealth Framework</h2></div><span>Open page →</span></a>
+<a class="card" href="gen-x.html"><div><div class="eyebrow">Wireframe</div><h2>Gen Xers</h2></div><span>Open page →</span></a>
+<a class="card" href="high-earning-millennials.html"><div><div class="eyebrow">Wireframe</div><h2>High-Earning Millennials</h2></div><span>Open page →</span></a>
+<a class="card" href="about.html"><div><div class="eyebrow">Wireframe</div><h2>About Us</h2></div><span>Open page →</span></a>
+<a class="card" href="fee-schedule.html"><div><div class="eyebrow">Wireframe</div><h2>Fee Schedule</h2></div><span>Open page →</span></a>
+<a class="card" href="josh-bio.html"><div><div class="eyebrow">Wireframe</div><h2>Josh Bio</h2></div><span>Open page →</span></a>
+<a class="card" href="resource-library.html"><div><div class="eyebrow">Wireframe</div><h2>Resource Library</h2></div><span>Open page →</span></a>
+</main>
+<section class="note"><div class="note-inner">Publish this folder from the repository root using GitHub Pages.</div></section>
+</body>
+</html>

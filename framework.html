@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bannerman Wealth Framework Wireframe</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap');
+:root{--navy:#001F4D;--blue:#2563A6;--sage:#8DA58D;--warm:#E8E6E3;--body:#5A6475;--slate:#7E8C99;--rule:#D9D7D3;--footer:#B0B8C1}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--navy);background:#fff;line-height:1.5}
+h1,h2,h3,h4,.section-label,nav,.button,.logo-link{color:inherit;text-decoration:none}.logo-box{font-family:Montserrat,Inter,sans-serif}p{color:var(--body)}
+.wrap{max-width:1220px;margin:0 auto;padding:0 24px}.header{position:sticky;top:0;z-index:10;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12)}.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 24px;max-width:1220px;margin:0 auto}.logo-box{height:48px;width:176px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;text-transform:uppercase;letter-spacing:.2em;font-size:12px;font-weight:700;color:rgba(255,255,255,.75)}nav a{color:inherit;text-decoration:none}nav{display:flex;gap:26px;font-size:14px;color:rgba(255,255,255,.78);font-weight:600}.button{display:inline-flex;align-items:center;justify-content:center;border-radius:6px;padding:12px 20px;font-size:14px;font-weight:700;text-decoration:none;border:1px solid rgba(0,31,77,.22);color:var(--navy);background:white;white-space:nowrap}.button.primary{background:var(--blue);color:white;border-color:var(--blue)}.button.sage{background:var(--sage);color:white;border-color:var(--sage)}.button.reversed{background:white;color:var(--navy);border-color:white}.section-label{text-transform:uppercase;letter-spacing:.18em;color:var(--blue);font-weight:800;font-size:12px;margin:0 0 12px}.section-label.light{color:rgba(255,255,255,.75)}h1,h2,h3{margin-top:0;letter-spacing:-.03em;line-height:1.04}h1{font-size:clamp(42px,5.6vw,68px);margin-bottom:26px}h2{font-size:clamp(36px,4.5vw,58px);margin-bottom:20px}h3{font-size:28px;margin-bottom:12px}.lede{font-size:20px;line-height:1.6;max-width:720px;margin-bottom:32px}.buttons{display:flex;flex-wrap:wrap;gap:16px}.box{border:1px solid var(--rule);background:white;border-radius:18px;box-shadow:0 3px 10px rgba(0,31,77,.04)}
+.hero{position:relative;overflow:hidden;background:rgba(232,230,227,.45)}.hero .wrap{position:relative;z-index:2;padding-top:75px;padding-bottom:75px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}.hero-bg-graphic{position:absolute;inset:0;pointer-events:none;overflow:hidden}.bg-circle{position:absolute;border-radius:999px;border:1px solid rgba(0,31,77,.10)}.bg-circle.one{height:680px;width:680px;right:-110px;top:-80px}.bg-circle.two{height:330px;width:330px;right:190px;top:150px;border-color:rgba(37,99,166,.13)}.bg-trunk{position:absolute;height:250px;width:1px;background:rgba(0,31,77,.14);right:355px;top:250px}.bg-branch{position:absolute;width:250px;border-top:1px solid rgba(0,31,77,.14);right:235px;top:275px}.bg-branch.left{transform:rotate(-25deg)}.bg-branch.right{transform:rotate(25deg)}.bg-node{position:absolute;border-radius:999px;border:1px solid rgba(37,99,166,.17)}.bg-node.a{height:140px;width:140px;right:395px;top:160px}.bg-node.b{height:120px;width:120px;right:170px;top:215px}.bg-node.c{height:100px;width:100px;right:465px;top:405px;border-color:rgba(141,165,141,.26)}.bg-node.d{height:86px;width:86px;right:220px;top:410px;border-color:rgba(141,165,141,.24)}
+.framework-preview{padding:32px;background:white;border-radius:24px;box-shadow:0 10px 28px rgba(0,31,77,.10)}.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.framework-mini{border:1px solid var(--rule);border-radius:16px;padding:22px;min-height:140px;background:rgba(232,230,227,.3);display:flex;flex-direction:column;justify-content:space-between}.mini-icon,.quad-icon{height:40px;width:40px;border:1px solid var(--rule);border-radius:999px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:800}
+section{padding:86px 0}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}.dark{background:var(--navy);color:white}.dark p{color:#C0CFE5}.quad-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.quad-card,.example-card,.process-card,.tier-card{padding:28px}.quad-card{min-height:245px}.quad-title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}.example-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.warm-block{background:rgba(232,230,227,.35);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}.process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.tier-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.tier-card{min-height:390px;display:flex;flex-direction:column;justify-content:space-between}.tier-card.featured{border:2px solid var(--sage)}.check-list{list-style:none;padding:0;margin:22px 0 0}.check-list li{display:flex;gap:10px;color:var(--body);font-size:14px;line-height:1.45;margin-bottom:12px}.check{color:var(--sage);font-weight:900;flex-shrink:0}.price-placeholder{margin-top:24px;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--slate)}
+footer{background:white;border-top:1px solid var(--rule);color:var(--body);font-size:14px}.footer-grid{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:40px;padding:56px 24px}.footer-logo{height:48px;width:176px;border:2px solid rgba(0,31,77,.22);background:white;border-radius:6px;display:flex;align-items:center;justify-content:center;text-transform:uppercase;letter-spacing:.2em;font-size:12px;font-weight:700;color:rgba(0,31,77,.55);margin-bottom:16px}.footer-col h4{color:var(--navy);margin:0 0 16px;font-size:14px}.footer-col div{margin:0 0 8px}.footer-col a{color:inherit;text-decoration:none}.footer-bottom{border-top:1px solid var(--rule);padding:20px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px}.legal{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:980px){nav{display:none}.hero .wrap,.split,.quad-grid,.example-grid,.process-grid,.tier-grid,.footer-grid{grid-template-columns:1fr}.hero-bg-graphic{opacity:.45}}@media(max-width:560px){.nav-inner{flex-wrap:wrap}.framework-grid{grid-template-columns:1fr}h1{font-size:44px}h2{font-size:34px}}
+
+.process-pricing-layout{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:32px;
+  align-items:start;
+}
+.process-flow{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+.process-card{
+  position:relative;
+}
+.process-card:not(:last-child)::after{
+  content:"→";
+  position:absolute;
+  top:50%;
+  right:-20px;
+  transform:translateY(-50%);
+  color:var(--blue);
+  font-family:Montserrat,Inter,sans-serif;
+  font-weight:800;
+  font-size:22px;
+  z-index:2;
+}
+.quad-bullets{
+  list-style:none;
+  padding:0;
+  margin:18px 0 0;
+}
+.quad-bullets li{
+  display:flex;
+  gap:9px;
+  color:var(--body);
+  font-size:14px;
+  line-height:1.45;
+  margin-bottom:10px;
+}
+.connect-note{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid var(--rule);
+  color:var(--body);
+  font-size:13px;
+  line-height:1.5;
+}
+.pricing-callout{
+  padding:30px;
+  border-top:4px solid var(--sage);
+}
+.pricing-row{
+  padding:16px 0;
+  border-bottom:1px solid var(--rule);
+}
+.pricing-row:last-child{border-bottom:none}
+.pricing-row h4{
+  margin:0 0 6px;
+  color:var(--navy);
+  font-size:18px;
+}
+.pricing-row p{
+  margin:0;
+  font-size:14px;
+  line-height:1.55;
+}
+.start-panel{
+  margin-top:34px;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:center;
+  padding:28px;
+  background:var(--navy);
+  border-radius:18px;
+}
+.start-panel h3{
+  color:white;
+  margin-bottom:6px;
+}
+.start-panel p{
+  color:#C0CFE5;
+  margin:0;
+}
+@media(max-width:980px){
+  .process-pricing-layout,.process-flow{grid-template-columns:1fr}
+  .process-card:not(:last-child)::after{display:none}
+  .start-panel{flex-direction:column;align-items:flex-start}
+}
+
+
+.process-pricing-layout{
+  grid-template-columns:1fr;
+}
+.process-content-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+.process-flow{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:18px;
+  align-items:stretch;
+}
+.process-card:not(:last-child)::after{
+  display:none;
+}
+
+.start-section{
+  background:var(--navy);
+  color:white;
+  padding:70px 0;
+}
+.start-section p{color:#C0CFE5}
+@media(max-width:980px){
+  .process-content-grid,.process-flow{grid-template-columns:1fr}
+}
+
+
+.flow-arrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--blue);
+  font-family:Montserrat,Inter,sans-serif;
+  font-weight:800;
+  font-size:28px;
+  min-width:24px;
+}
+.flow-break{
+  display:none;
+}
+.pricing-callout{
+  background:#F4F2EF;
+}
+.pricing-callout p.internal-replaced{
+  color:var(--body);
+}
+@media(max-width:980px){
+  .process-flow{grid-template-columns:1fr!important}
+  .flow-arrow{display:none}
+}
+
+
+/* Final hero/process refinements */
+.hero > .wrap{
+  padding-top:75px!important;
+  padding-bottom:75px!important;
+}
+.hero .lede,
+.hero .hero-followup{
+  font-size:18px!important;
+  line-height:1.65!important;
+}
+.hero h1{
+  font-size:clamp(40px,5vw,64px)!important;
+}
+.process-flow{
+  display:grid!important;
+  grid-template-columns:1fr 48px 1fr!important;
+  grid-template-areas:
+    "step1 arrow12 step2"
+    "empty arrow23 step3"
+    "step4 arrow34 step3";
+  gap:22px!important;
+  align-items:stretch!important;
+}
+.process-card{position:relative}
+.process-card.step1{grid-area:step1}
+.process-card.step2{grid-area:step2}
+.process-card.step3{grid-area:step3}
+.process-card.step4{grid-area:step4}
+.flow-arrow{display:flex!important;align-items:center;justify-content:center;color:var(--blue);font-family:Montserrat,Inter,sans-serif;font-weight:800;font-size:30px;min-width:48px}
+.arrow12{grid-area:arrow12}
+.arrow23{grid-area:arrow23;transform:rotate(90deg)}
+.arrow34{grid-area:arrow34;transform:rotate(180deg)}
+.process-card::after{display:none!important}
+.pricing-callout{background:#F4F2EF!important}
+@media(max-width:980px){
+  .process-flow{grid-template-columns:1fr!important;grid-template-areas:none!important}
+  .process-card.step1,.process-card.step2,.process-card.step3,.process-card.step4{grid-area:auto!important}
+  .flow-arrow{display:none!important}
+}
+
+
+/* V6 final layout corrections */
+.hero .wrap,
+.hero > .wrap{
+  padding-top:75px!important;
+  padding-bottom:75px!important;
+}
+.hero{
+  min-height:auto!important;
+}
+.hero-bg-graphic{
+  top:0!important;
+  bottom:0!important;
+  height:100%!important;
+  opacity:.55!important;
+}
+.hero .bg-circle.one{
+  height:420px!important;
+  width:420px!important;
+  right:-80px!important;
+  top:20px!important;
+}
+.hero .bg-circle.two{
+  height:230px!important;
+  width:230px!important;
+  right:150px!important;
+  top:120px!important;
+}
+.hero .bg-trunk{
+  height:150px!important;
+  right:280px!important;
+  top:185px!important;
+}
+.hero .bg-branch{
+  width:150px!important;
+  right:205px!important;
+  top:210px!important;
+}
+.hero .bg-node.a{
+  height:82px!important;
+  width:82px!important;
+  right:330px!important;
+  top:110px!important;
+}
+.hero .bg-node.b{
+  height:76px!important;
+  width:76px!important;
+  right:140px!important;
+  top:180px!important;
+}
+.hero .bg-node.c{
+  height:64px!important;
+  width:64px!important;
+  right:365px!important;
+  top:300px!important;
+}
+.hero .bg-node.d{
+  height:58px!important;
+  width:58px!important;
+  right:185px!important;
+  top:305px!important;
+}
+.hero .lede,
+.hero .hero-followup{
+  font-size:18px!important;
+  line-height:1.65!important;
+}
+.hero h1{
+  font-size:clamp(40px,5vw,64px)!important;
+}
+
+/* Process layout corrected: 2x2 snake flow with pricing inline */
+.process-content-grid{
+  display:grid!important;
+  grid-template-columns:2fr 1fr!important;
+  gap:32px!important;
+  align-items:start!important;
+}
+.process-flow{
+  display:grid!important;
+  grid-template-columns:1fr 56px 1fr!important;
+  grid-template-areas:
+    "step1 arrow12 step2"
+    "blank arrow23 step3"
+    "step4 arrow34 step3"!important;
+  gap:22px!important;
+  align-items:stretch!important;
+}
+.process-card.step1{grid-area:step1!important}
+.process-card.step2{grid-area:step2!important}
+.process-card.step3{grid-area:step3!important}
+.process-card.step4{grid-area:step4!important}
+.flow-arrow{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  color:var(--blue)!important;
+  font-family:Montserrat,Inter,sans-serif!important;
+  font-weight:800!important;
+  font-size:30px!important;
+  min-width:56px!important;
+}
+.arrow12{grid-area:arrow12!important}
+.arrow23{grid-area:arrow23!important;transform:rotate(90deg)!important}
+.arrow34{grid-area:arrow34!important;transform:rotate(180deg)!important}
+.process-card::after,
+.process-card .step-arrow{
+  display:none!important;
+}
+.pricing-callout{
+  background:#F4F2EF!important;
+  align-self:start!important;
+}
+@media(max-width:980px){
+  .process-content-grid{grid-template-columns:1fr!important}
+  .process-flow{grid-template-columns:1fr!important;grid-template-areas:none!important}
+  .process-card.step1,.process-card.step2,.process-card.step3,.process-card.step4{grid-area:auto!important}
+  .flow-arrow{display:none!important}
+}
+
+
+/* V7 corrections */
+section.hero{
+  padding:0!important;
+}
+.hero .wrap,
+.hero > .wrap{
+  padding-top:75px!important;
+  padding-bottom:75px!important;
+}
+.hero-bg-graphic{
+  height:100%!important;
+  inset:0!important;
+  opacity:.45!important;
+}
+.hero h1{
+  font-size:clamp(40px,5vw,64px)!important;
+}
+.hero .lede,
+.hero .hero-followup{
+  font-size:18px!important;
+  line-height:1.65!important;
+}
+.process-content-grid{
+  display:grid!important;
+  grid-template-columns:minmax(0,2.1fr) minmax(300px,.9fr)!important;
+  gap:32px!important;
+  align-items:start!important;
+}
+.process-flow{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 52px minmax(0,1fr)!important;
+  grid-template-rows:auto 48px auto!important;
+  grid-template-areas:
+    "step1 arrow12 step2"
+    ". . arrow23"
+    "step4 arrow34 step3"!important;
+  gap:18px!important;
+  align-items:stretch!important;
+}
+.process-card{
+  position:relative!important;
+  min-height:220px!important;
+}
+.process-card.step1{grid-area:step1!important}
+.process-card.step2{grid-area:step2!important}
+.process-card.step3{grid-area:step3!important}
+.process-card.step4{grid-area:step4!important}
+.flow-arrow{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  color:var(--blue)!important;
+  font-family:Montserrat,Inter,sans-serif!important;
+  font-weight:800!important;
+  font-size:30px!important;
+  line-height:1!important;
+}
+.arrow12{grid-area:arrow12!important}
+.arrow23{grid-area:arrow23!important;transform:rotate(90deg)!important}
+.arrow34{grid-area:arrow34!important;transform:rotate(180deg)!important}
+.process-card::after,
+.process-card .step-arrow{
+  display:none!important;
+}
+.pricing-callout{
+  background:#F4F2EF!important;
+  align-self:start!important;
+}
+@media(max-width:980px){
+  .process-content-grid{grid-template-columns:1fr!important}
+  .process-flow{grid-template-columns:1fr!important;grid-template-rows:auto!important;grid-template-areas:none!important}
+  .process-card.step1,.process-card.step2,.process-card.step3,.process-card.step4{grid-area:auto!important}
+  .flow-arrow{display:none!important}
+}
+
+</style></head>
+<body>
+<header class="header"><div class="nav-inner"><a class="logo-link" href="index.html"><div class="logo-box">Logo</div></a><nav><a href="framework.html">Framework</a><a href="gen-x.html">Who We Help</a><a href="resource-library.html">Podcast Listeners</a><a href="resource-library.html">Resources</a><a href="about.html">About</a></nav><a class="button reversed" href="scorecard.html">Schedule Clarity Call</a></div></header>
+<main>
+<section class="hero"><div class="hero-bg-graphic"><div class="bg-circle one"></div><div class="bg-circle two"></div><div class="bg-trunk"></div><div class="bg-branch left"></div><div class="bg-branch right"></div><div class="bg-node a"></div><div class="bg-node b"></div><div class="bg-node c"></div><div class="bg-node d"></div></div><div class="wrap"><div><div class="section-label">The Bannerman Wealth Framework</div><h1>A clearer way to coordinate the moving parts of wealth.</h1><p class="lede">As your financial life grows, decisions start to overlap. Investments affect taxes. Retirement income affects cash flow. Estate decisions affect family conversations.</p><p class="hero-followup" style="max-width:720px;">The Bannerman Wealth Framework helps you see how one decision affects another, then coordinate the whole picture through one planning relationship.</p></div><div class="framework-preview"><div class="section-label" style="color:var(--slate);">Framework overview</div><div class="framework-grid"><div class="framework-mini"><div class="mini-icon">↗</div><h3>Grow</h3></div><div class="framework-mini"><div class="mini-icon">◎</div><h3>Protect</h3></div><div class="framework-mini"><div class="mini-icon">↓</div><h3>Distribute</h3></div><div class="framework-mini"><div class="mini-icon">→</div><h3>Transfer</h3></div></div></div></div></section>
+
+
+
+<section class="dark"><div class="wrap"><div class="split" style="margin-bottom:40px;"><div><div class="section-label light">Four connected areas</div><h2>The Bannerman Wealth Framework</h2></div><p style="font-size:18px;">The framework gives each planning conversation a clear structure while still showing how the decisions overlap. A concentrated stock position, retirement income decision, or family transition rarely lives in one category.</p></div><div class="quad-grid" style="color:var(--navy);">
+      <div class="box quad-card"><div class="quad-title"><h3>Grow</h3><span class="quad-icon">↗</span></div><p>How wealth continues working and accumulating over time.</p><ul class="quad-bullets"><li><span class="check">✓</span><span>Investment strategy and portfolio design</span></li><li><span class="check">✓</span><span>Cash flow, savings, and equity compensation</span></li><li><span class="check">✓</span><span>Tax-aware accumulation decisions</span></li></ul><div class="connect-note">Example: concentrated stock can create growth potential, but also tax timing and risk exposure.</div></div>
+      <div class="box quad-card"><div class="quad-title"><h3>Protect</h3><span class="quad-icon">◎</span></div><p>How wealth, income, family, and future plans are protected from avoidable risk.</p><ul class="quad-bullets"><li><span class="check">✓</span><span>Insurance and risk review</span></li><li><span class="check">✓</span><span>Estate documents and contingency planning</span></li><li><span class="check">✓</span><span>Concentration, liability, and family exposure</span></li></ul><div class="connect-note">Example: family decisions can affect beneficiaries, estate documents, insurance, and cash flow.</div></div>
+      <div class="box quad-card"><div class="quad-title"><h3>Distribute</h3><span class="quad-icon">↓</span></div><p>How assets become usable income and support real-life decisions.</p><ul class="quad-bullets"><li><span class="check">✓</span><span>Retirement income and withdrawal strategy</span></li><li><span class="check">✓</span><span>Tax brackets, Social Security, and Medicare considerations</span></li><li><span class="check">✓</span><span>Coordinating spending, income, and portfolio design</span></li></ul><div class="connect-note">Example: retirement income decisions affect taxes, health care costs, investments, and legacy goals.</div></div>
+      <div class="box quad-card"><div class="quad-title"><h3>Transfer</h3><span class="quad-icon">→</span></div><p>How wealth moves, what it supports, and how future decisions are prepared.</p><ul class="quad-bullets"><li><span class="check">✓</span><span>Legacy and beneficiary coordination</span></li><li><span class="check">✓</span><span>Family conversations and charitable intent</span></li><li><span class="check">✓</span><span>Preparing wealth to move with less confusion</span></li></ul><div class="connect-note">Example: transfer planning often connects estate documents, taxes, family dynamics, and long-term income needs.</div></div>
+    </div></div></section>
+
+
+
+<section class="warm-block"><div class="wrap"><div style="max-width:860px;margin-bottom:36px;"><div class="section-label">How we work together</div><h2>A planning relationship should have structure.</h2><p>The process is designed to move from understanding your situation to building a coordinated plan, then helping keep that plan current as life changes.</p></div>
+    <div class="process-content-grid">
+      <div class="process-flow">
+        <div class="box process-card step1"><div class="section-label" style="color:var(--slate);">Step 01</div><h3>Clarity Call</h3><p>A first conversation to understand your situation, the decisions in front of you, and whether Bannerman is the right fit.</p></div>
+        <div class="flow-arrow arrow12">→</div>
+        <div class="box process-card step2"><div class="section-label" style="color:var(--slate);">Step 02</div><h3>Financial Health Review</h3><p>A deeper look at how your financial life is currently coordinated across the four framework areas.</p></div>
+        <div class="flow-arrow arrow23">→</div>
+        <div class="box process-card step3"><div class="section-label" style="color:var(--slate);">Step 03</div><h3>Plan Design</h3><p>A coordinated planning roadmap that identifies priorities, tradeoffs, and the sequence of decisions to address.</p></div>
+        <div class="flow-arrow arrow34">→</div>
+        <div class="box process-card step4"><div class="section-label" style="color:var(--slate);">Step 04</div><h3>Ongoing Coordination</h3><p>Regular advice, implementation support, and planning updates as your financial life continues to evolve.</p></div>
+      </div>
+      <div class="box pricing-callout">
+        <div class="section-label">Transparent pricing</div>
+        <h3>Fees are based on complexity.</h3>
+        <p>Our pricing is transparent and designed to reflect the complexity of your financial life, the level of coordination required, and the scope of the advisory relationship.</p>
+        <div class="pricing-row"><h4>Foundation</h4><p>For clients below the core AUM threshold who need an organized planning foundation.</p></div>
+        <div class="pricing-row"><h4>Momentum</h4><p>For clients with more complexity and an ongoing advisory relationship based on the firm’s tiered schedule.</p></div>
+        <div class="pricing-row"><h4>Legacy</h4><p>For families with significant wealth complexity and custom planning needs.</p></div>
+        <div style="margin-top:22px;"><a class="button" href="fee-schedule.html">View Full Fee Schedule</a></div>
+      </div>
+    </div>
+  </div></section>
+
+<section class="start-section"><div class="wrap" style="max-width:920px;text-align:center;"><div class="section-label light">Start here</div><h2>See how your financial life fits together.</h2><p class="lede" style="margin-left:auto;margin-right:auto;">Start with the Financial Health Scorecard or schedule a Clarity Call to talk through the decisions in front of you.</p><div class="buttons" style="justify-content:center;"><a class="button primary" href="scorecard.html">Get My Financial Health Score</a><a class="button sage" href="scorecard.html">Schedule Clarity Call</a></div></div></section>
+</main>
+<footer><div class="wrap footer-grid"><div><div class="footer-logo">Logo</div><p>Financial planning for people whose wealth has outgrown DIY.</p></div><div class="footer-col"><h4>Framework</h4><div><a href="resource-library.html#topics">Grow</a></div><div><a href="resource-library.html#topics">Protect</a></div><div><a href="resource-library.html#topics">Distribute</a></div><div><a href="resource-library.html#topics">Transfer</a></div></div><div class="footer-col"><h4>Who We Help</h4><div><a href="gen-x.html">Planning for Gen Xers Nearing Retirement</a></div><div><a href="high-earning-millennials.html">Wealth Planning for High-Earning Millennials</a></div><div><a href="resource-library.html">Podcast Listeners</a></div></div><div class="footer-col"><h4>Resources</h4><div><a href="resource-library.html">Education Series</a></div><div><a href="resource-library.html#latest">Insights</a></div><div><a href="resource-library.html#featured">Guidebooks</a></div></div><div class="footer-col"><h4>Bannerman Wealth</h4><div><a href="about.html">About</a></div><div><a href="josh-bio.html">Meet Josh</a></div><div><a href="about.html">Meet Anna</a></div><div><a href="fee-schedule.html">Fee Schedule</a></div><div><a href="about.html">Contact</a></div></div></div><div class="wrap footer-bottom"><div>© Bannerman Wealth</div><div class="legal"><span>Privacy Policy</span><span>Terms of Use</span><span>Form CRS</span><span>ADV</span><span>Disclosures</span></div></div></footer>
+</body></html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bannerman Wealth Scorecard Page Wireframe</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap');
+:root{--navy:#001F4D;--blue:#2563A6;--sage:#8DA58D;--white:#FFFFFF;--warm:#E8E6E3;--body:#5A6475;--slate:#7E8C99;--footer:#B0B8C1;--rule:#D9D7D3}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--navy);background:var(--white);line-height:1.5}
+h1,h2,h3,h4,.section-label,nav,.button,.logo-box,.score-num,a.card-link{text-decoration:none;display:inline-block}.card-link{font-family:"Montserrat","Inter",system-ui,sans-serif}
+.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+.header{position:sticky;top:0;z-index:10;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 24px;max-width:1220px;margin:0 auto}
+.logo-link{color:inherit;text-decoration:none}.logo-box{height:48px;width:176px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;text-transform:uppercase;letter-spacing:.2em;font-size:12px;font-weight:700;color:rgba(255,255,255,.75)}
+nav a{color:inherit;text-decoration:none}nav{display:flex;gap:26px;font-size:14px;color:rgba(255,255,255,.78);font-weight:600}
+.button{display:inline-flex;align-items:center;justify-content:center;border-radius:6px;padding:12px 20px;font-size:14px;font-weight:700;text-decoration:none;border:1px solid rgba(0,31,77,.22);color:var(--navy);background:white;white-space:nowrap}
+.button.primary{background:var(--blue);color:white;border-color:var(--blue)}
+.button.sage{background:var(--sage);color:white;border-color:var(--sage)}
+.button.reversed{background:white;color:var(--navy);border-color:white}
+.section-label{text-transform:uppercase;letter-spacing:.18em;color:var(--blue);font-weight:800;font-size:12px;margin:0 0 12px}
+h1,h2,h3{margin-top:0;letter-spacing:-.03em;line-height:1.04}
+h1{font-size:clamp(48px,7vw,84px);margin-bottom:28px}
+h2{font-size:clamp(36px,4.5vw,58px);margin-bottom:20px}
+h3{font-size:28px;margin-bottom:12px}
+p{color:var(--body)}
+.lede{font-size:20px;line-height:1.6;max-width:720px;margin-bottom:32px}
+.buttons{display:flex;flex-wrap:wrap;gap:16px}
+.box{border:1px solid var(--rule);background:white;border-radius:18px;box-shadow:0 3px 10px rgba(0,31,77,.04)}
+.hero{position:relative;overflow:hidden;background:rgba(232,230,227,.45)}
+.hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:110px}
+.hero-content{max-width:760px}
+.hero-bg-graphic{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bg-circle{position:absolute;border-radius:999px;border:1px solid rgba(0,31,77,.10)}
+.bg-circle.one{height:680px;width:680px;right:-110px;top:-80px}
+.bg-circle.two{height:330px;width:330px;right:190px;top:150px;border-color:rgba(37,99,166,.13)}
+.bg-trunk{position:absolute;height:250px;width:1px;background:rgba(0,31,77,.14);right:355px;top:250px}
+.bg-branch{position:absolute;width:250px;border-top:1px solid rgba(0,31,77,.14);right:235px;top:275px}
+.bg-branch.left{transform:rotate(-25deg)}
+.bg-branch.right{transform:rotate(25deg)}
+.bg-node{position:absolute;border-radius:999px;border:1px solid rgba(37,99,166,.17)}
+.bg-node.a{height:140px;width:140px;right:395px;top:160px}
+.bg-node.b{height:120px;width:120px;right:170px;top:215px}
+.bg-node.c{height:100px;width:100px;right:465px;top:405px;border-color:rgba(141,165,141,.26)}
+.bg-node.d{height:86px;width:86px;right:220px;top:410px;border-color:rgba(141,165,141,.24)}
+section{padding:86px 0}
+.white-block{background:white;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.warm-block{background:rgba(232,230,227,.35);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.dark{background:var(--navy);color:white}
+.dark p{color:#C0CFE5}
+.dark .section-label{color:white}
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.pillar-card{padding:28px;min-height:210px}
+.pillar-title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.pillar-icon{height:40px;width:40px;border:1px solid var(--rule);border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:var(--blue);font-size:20px;font-weight:700;line-height:1;flex-shrink:0}
+.embed-box{padding:32px;min-height:620px;background:rgba(232,230,227,.35);display:flex;flex-direction:column;justify-content:space-between}
+.embed-placeholder{min-height:460px;border:1px solid var(--rule);border-radius:18px;background:white;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--slate);padding:32px}
+.score-preview{padding:28px;background:white;border-radius:22px;box-shadow:0 8px 22px rgba(0,31,77,.10)}
+.score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.score-card{border:1px solid var(--rule);border-radius:14px;background:white;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;box-shadow:0 2px 8px rgba(0,31,77,.04)}
+.score-label{text-transform:uppercase;letter-spacing:.12em;color:var(--body);font-size:12px;margin-bottom:12px}
+.score-num{font-size:34px;font-weight:800;color:var(--navy)}
+.overall{margin-top:20px;border:1px solid var(--rule);border-radius:14px;background:white;padding:24px 20px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--navy);box-shadow:0 2px 8px rgba(0,31,77,.04)}
+.step-card{padding:28px;min-height:230px}
+@media(max-width:980px){nav{display:none}.split,.grid-3,.grid-4{grid-template-columns:1fr}.score-grid{grid-template-columns:repeat(2,1fr)}.hero-bg-graphic{opacity:.45}}
+@media(max-width:560px){.nav-inner{flex-wrap:wrap}.score-grid{grid-template-columns:1fr}h1{font-size:44px}h2{font-size:34px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="nav-inner">
+    <a class="logo-link" href="index.html"><div class="logo-box">Logo</div></a>
+    <nav>
+      <span>Financial Life</span>
+      <a href="gen-x.html">Who We Help</a>
+      <a href="resource-library.html">Podcast Listeners</a>
+      <a href="resource-library.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a class="button reversed" href="scorecard.html">Schedule Clarity Call</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-bg-graphic">
+    <div class="bg-circle one"></div><div class="bg-circle two"></div>
+    <div class="bg-trunk"></div><div class="bg-branch left"></div><div class="bg-branch right"></div>
+    <div class="bg-node a"></div><div class="bg-node b"></div><div class="bg-node c"></div><div class="bg-node d"></div>
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="section-label">Financial Life Scorecard</div>
+      <h1>How optimized is your financial life?</h1>
+      <p class="lede">You’ve built real assets. This five-minute assessment helps you see where you stand, where your financial life is working together, and where you may be leaving opportunities on the table.</p>
+      <div class="buttons"><a class="button primary" href="scorecard.html">Get My Score</a><a class="button" href="#">See What You’ll Receive</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="section-label">Start here</div>
+      <h2>Start with a clearer view of your financial life.</h2>
+      <p>The assessment is designed to help you step back and see whether the major parts of your financial life are working together.</p>
+      <p>You’ll answer a focused set of questions and receive a report that highlights what may deserve more attention.</p>
+    </div>
+    <div class="box embed-box">
+      <div>
+        <div class="section-label" style="color:var(--slate);">Embedded scorecard module</div>
+        <div class="embed-placeholder">Scorecard embed code appears here<br>inside the page content.</div>
+      </div>
+      <p style="font-size:14px;border-top:1px solid var(--rule);padding-top:20px;margin-top:24px;">Optional interaction: “Open full-screen” link for mobile or longer assessment experience.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="split" style="margin-bottom:40px;">
+      <div>
+        <div class="section-label">What it measures</div>
+        <h2>A coordinated financial life requires four things done well. Simultaneously.</h2>
+      </div>
+      <p style="font-size:18px;">The scorecard is organized around the same four-part framework Bannerman uses to coordinate connected financial decisions: Grow, Protect, Distribute, and Transfer.</p>
+    </div>
+    <div class="grid-4" style="color:var(--navy);">
+      <div class="box pillar-card"><div class="pillar-title"><h3>Grow</h3><span class="pillar-icon">↗</span></div><p>Investments, savings, equity compensation, tax-aware strategy, and the decisions that help wealth continue working.</p></div>
+      <div class="box pillar-card"><div class="pillar-title"><h3>Protect</h3><span class="pillar-icon">◎</span></div><p>Risk, insurance, estate documents, family obligations, and the decisions that keep a plan from being quietly undermined.</p></div>
+      <div class="box pillar-card"><div class="pillar-title"><h3>Distribute</h3><span class="pillar-icon">↓</span></div><p>Retirement income, withdrawal strategy, tax brackets, Social Security, Medicare surcharges, and turning assets into a usable plan.</p></div>
+      <div class="box pillar-card"><div class="pillar-title"><h3>Transfer</h3><span class="pillar-icon">→</span></div><p>Legacy, estate coordination, beneficiaries, family conversations, and preparing wealth to move with less confusion.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split" style="align-items:center;">
+    <div>
+      <div class="section-label">Your report</div>
+      <h2>You’ll receive a clearer view of what deserves attention next.</h2>
+      <p>After completing the assessment, visitors receive their scorecard report by email and enter a short education sequence that helps them understand what their results may mean.</p>
+      <div style="color:var(--body);line-height:1.9;">
+        <div>• A score across Grow, Protect, Distribute, and Transfer</div>
+        <div>• A summary of potential gaps or planning priorities</div>
+        <div>• Educational follow-up that leads to a Score Review conversation</div>
+      </div>
+    </div>
+    <div class="box score-preview">
+      <div class="section-label" style="color:var(--slate);">Sample report preview</div>
+      <div class="score-grid">
+        <div class="score-card"><div class="score-label">Grow</div><div class="score-num">74%</div></div>
+        <div class="score-card"><div class="score-label">Protect</div><div class="score-num">82%</div></div>
+        <div class="score-card"><div class="score-label">Distribute</div><div class="score-num">61%</div></div>
+        <div class="score-card"><div class="score-label">Transfer</div><div class="score-num">68%</div></div>
+      </div>
+      <div class="overall"><div><div class="score-label">Overall</div><strong>Financial Life Score</strong></div><div class="score-num">71%</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="warm-block">
+  <div class="wrap">
+    <div class="intro">
+      <div class="section-label">After the scorecard</div>
+      <h2>The next step is education first, conversation second.</h2>
+      <p>The follow-up sequence should help the visitor understand their results before asking for a meeting. The final ask is a Score Review with Josh and Anna.</p>
+    </div>
+    <div class="grid-3">
+      <div class="box step-card"><div class="section-label" style="color:var(--slate);">Step 01</div><h3>Complete the scorecard</h3><p>Answer a focused set of questions about how coordinated your financial life feels today.</p></div>
+      <div class="box step-card"><div class="section-label" style="color:var(--slate);">Step 02</div><h3>Receive your report</h3><p>Get your results by email, including your four-part score and areas that may deserve attention.</p></div>
+      <div class="box step-card"><div class="section-label" style="color:var(--slate);">Step 03</div><h3>Review your results</h3><p>When ready, schedule a Score Review to discuss what your results may mean for your household.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap" style="max-width:880px;text-align:center;">
+    <div class="section-label">Get your score</div>
+    <h2>Get a clearer view of where your financial life stands.</h2>
+    <p class="lede" style="margin-left:auto;margin-right:auto;">Take the five-minute assessment and get a clearer view of what deserves attention next.</p>
+    <div class="buttons" style="justify-content:center;"><a class="button primary" href="scorecard.html">Get My Score</a><a class="button sage" href="scorecard.html">Schedule Clarity Call</a></div>
+  </div>
+</section>
+</main>
+</body>
+</html>
